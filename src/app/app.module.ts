@@ -20,12 +20,12 @@ import { FireFormDirective } from './fire-form.directive';
 
 // Add your project credentials
 const firebase = {
-  apiKey: '<your-key>',
-  authDomain: '<your-project-authdomain>',
-  databaseURL: '<your-database-URL>',
-  projectId: '<your-project-id>',
-  storageBucket: '<your-storage-bucket>',
-  messagingSenderId: '<your-messaging-sender-id>'
+  apiKey: "AIzaSyAjU-xUFinMv34LwGnyB0V23r0mPQLIQHs",
+  authDomain: "hiremuse-3da59.firebaseapp.com",
+  databaseURL: "https://hiremuse-3da59.firebaseio.com",
+  projectId: "hiremuse-3da59",
+  storageBucket: "hiremuse-3da59.appspot.com",
+  messagingSenderId: "590426111911"
 };
 
 @NgModule({
