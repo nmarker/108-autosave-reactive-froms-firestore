@@ -62,7 +62,22 @@
         <textarea matInput placeholder="your bio" formControlName="bio"></textarea>
     </mat-form-field>
 
-
+    <div formArrayName="skillArrayForm" cellspacing="0">
+        <div *ngFor="let number of getskillForms.controls | async; let i = index" [formGroupName]="i">
+            <mat-form-field class="example-full-width">
+                <mat-select formControlName="skill" placeholder="skill">
+                    <mat-option value="Magician">Magician</mat-option>
+                    <mat-option value="Clown">Clown</mat-option>
+                    <mat-option value="Juggler">Juggler</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-radio-group formControlName="level">
+                <mat-radio-button value="Advanced">Advanced</mat-radio-button>
+                <mat-radio-button value="Medium">Medium</mat-radio-button>
+                <mat-radio-button value="Beginner">Beginner</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
 
 
     <hr> Fireform state: {{ state }} <br>

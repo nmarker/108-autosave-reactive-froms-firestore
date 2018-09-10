@@ -22,12 +22,28 @@ export class FormDemoComponent implements OnInit {
     this.myForm = this.fb.group({
       email: ['', Validators.required],
       career: ['', Validators.required],
-      bio: ['']
+      bio: [''],
+      skillArrayForm: [this.fb.group(
+        (
+          [this.initSkill()]
+        ))]
     })
 
     this.myDoc = this.afs.doc('contacts/test').valueChanges();
   }
 
+  get getskillForms() {
+    return this.myForm.get('skillArrayForm') as FormArray
+  }
+  
+  initSkill() {
+    console.log("in initSkill")
+    // initialize our address
+    return this.fb.group({
+        level: ['', Validators.required],
+        skill: ['']
+    });
+  }
 
   changeHandler(e) {
     // console.log(e)

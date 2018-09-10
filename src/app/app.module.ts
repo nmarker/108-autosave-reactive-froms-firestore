@@ -13,7 +13,8 @@ import {
   MatInputModule,
   MatButtonModule,
   MatSelectModule,
-  MatGridListModule
+  MatGridListModule,
+  MatRadioModule
 } from '@angular/material';
 import { FormDemoComponent } from './form-demo/form-demo.component';
 import { FireFormDirective } from './fire-form.directive';
@@ -43,7 +44,8 @@ const firebase = {
     MatInputModule,
     MatButtonModule,
     MatSelectModule,
-    MatGridListModule
+    MatGridListModule,
+    MatRadioModule
   ],
   bootstrap: [AppComponent]
 })

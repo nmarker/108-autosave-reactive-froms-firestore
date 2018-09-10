@@ -51,7 +51,14 @@ export class FireFormDirective implements OnInit, OnDestroy {
       .pipe(
         tap(doc => {
           if (doc) {
-            this.formGroup.patchValue(doc);
+            //this.formGroup.patchValue(doc);
+            this.formGroup.setValue({
+              email: doc['email'],
+              career: doc['career'],
+              bio: doc['bio'],
+              skillArrayForm: doc['skillArrayForm']
+              //skillArrayForm: this.testparse(doc['skillArrayForm'])
+            });
             this.formGroup.markAsPristine();
             this.state = 'synced';
           }
@@ -61,7 +68,24 @@ export class FireFormDirective implements OnInit, OnDestroy {
       .subscribe();
   }
 
+  // testparse(skillarray: Variable){
+  //   console.log('typeof: ' + typeof skillarray)
+  //   console.log('isarray: ' + isArray(skillarray))
+  //   console.log('in testparse: ' + skillarray)  
+  //   for (let temp in skillarray)
+  //   {
+  //     console.log('temp:' + temp.toString() + ' : ' + skillarray[temp.toString()]['level'] + ' : ' + skillarray[temp.toString()]['skill'])
+      
+  //     const phone = this.fb.group({ 
+  //       level: [skillarray[temp.toString()]['level']],
+  //       skill: [skillarray[temp.toString()]['skill']]
+  //     })
   
+  //     //this.getskillForms.push(phone)    
+  //     this.formGroup.setValue(phone)
+  //   }
+  // }
+
   // Autosaves form changes
   autoSave() {
     this.formSub = this.formGroup.valueChanges
