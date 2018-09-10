@@ -50,4 +50,13 @@ export class FormDemoComponent implements OnInit {
     this.state = e;
 
   }
+  addSkill() {
+
+    const phone = this.fb.group({ 
+      level: [],
+      skill: []
+    })
+
+    this.getskillForms.push(phone);
+  }
 }
